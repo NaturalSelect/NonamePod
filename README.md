@@ -34,5 +34,5 @@ docker run \
     -e HTTP_PROXY="" \
     -e HTTPS_PROXY="" \
     --net host \
-    "naturalselect/nonameshapod:latest"
+    "naturalselect/nonameshapod:v1.10.4"
 ```
