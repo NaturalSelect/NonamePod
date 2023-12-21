@@ -2,7 +2,7 @@
 
 docker run \
     --rm \
-    -it \
+    -d \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY \
     -e XMODIFIERS \
@@ -16,5 +16,12 @@ docker run \
     --ipc host \
     -e HTTP_PROXY="" \
     -e HTTPS_PROXY="" \
+    -e AUDIO_GID="$(getent group audio | cut -d: -f3)" \
+    -e VIDEO_GID="$(getent group video | cut -d: -f3)" \
     --net host \
+    -v /dev/shm:/dev/shm \
+    --device /dev/dri\
+    -v /run/user/$(id -u)/pulse:/run/user/$(id -u)/pulse \
+    -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
+    -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
     "naturalselect/nonameshapod:v1.10.4"
