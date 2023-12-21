@@ -36,3 +36,5 @@ docker run \
     --net host \
     "naturalselect/nonameshapod:v1.10.4"
 ```
+
+当点击需要下载资源文件时，请选择取消（Image内已内置）。
