@@ -9,3 +9,6 @@ rm chromium77-client.tar.gz
 mv ./noname-chromium77-client/* ./
 rm -r ./noname-chromium77-client
 popd
+
+rm ./resources/app/mode/identity.js
+mv ./identity.js ./resources/app/mode/identity.js

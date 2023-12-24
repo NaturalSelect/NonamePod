@@ -3,6 +3,7 @@
 docker run \
     --rm \
     -d \
+    -e NONAME_HOST_MINI_CHAR_NUM=0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY \
     -e XMODIFIERS \

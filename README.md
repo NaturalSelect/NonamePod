@@ -20,6 +20,7 @@ or
 docker run \
     --rm \
     -d \
+    -e NONAME_HOST_MINI_CHAR_NUM=0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY \
     -e XMODIFIERS \
@@ -45,3 +46,9 @@ docker run \
 ```
 
 当点击需要下载资源文件时，请选择取消（Image内已内置）。
+
+## Config
+
+|Env|Description|
+|-|-|
+|NONAME_HOST_MINI_CHAR_NUM|作为联机宿主机时，每个玩家最小的候选将个数（身份局）。|
