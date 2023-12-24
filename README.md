@@ -51,4 +51,5 @@ docker run \
 
 |Env|Description|
 |-|-|
-|NONAME_HOST_MINI_CHAR_NUM|作为联机宿主机时，每个玩家最小的候选将个数（身份局）。|
+|NONAME_HOST_MAX_CHAR_NUM|作为联机宿主机时，每个玩家最大的基本候选将个数（身份局）。|
+|NONAME_HOST_ALLOW_FREE_CHOOSE|联机模式选将（身份局）。|
