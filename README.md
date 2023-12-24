@@ -20,7 +20,8 @@ or
 docker run \
     --rm \
     -d \
-    -e NONAME_HOST_MINI_CHAR_NUM=0 \
+    -e NONAME_HOST_MAX_CHAR_NUM=0 \
+    -e NONAME_HOST_ALLOW_FREE_CHOOSE=false \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY \
     -e XMODIFIERS \
