@@ -2329,12 +2329,7 @@ game.import('mode',function(lib,game,ui,get,ai,_status){
 					var next=game.zhu.chooseButton(true);
 					next.set('selectButton',(lib.configOL.double_character?2:1));
 					// NOTE: set AI character set
-					if (AllowFreeChoose || MaxCharNum == -1) {
-						var tmp = getZhuList(list2).concat(list3.randomGets(MaxCharNum));
-						next.set('createDialog',['选择角色',[tmp,'characterx']]);
-					} else {
-						next.set('createDialog',['选择角色',[list,'characterx']]);
-					}
+					next.set('createDialog',['选择角色',[list,'characterx']]);
 					next.set('ai',function(button){
 						return Math.random();
 					});
