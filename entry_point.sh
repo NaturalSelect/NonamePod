@@ -10,4 +10,9 @@ then
     sed -i "3s/.*/const AllowFreeChoose = ${NONAME_HOST_ALLOW_FREE_CHOOSE};/" ./resources/app/mode/identity.js
 fi
 
+if [ -n "${NONAME_HOST_EXTRA_CHAR}" ]
+then
+    sed -i "4s/.*/const HostExtraChar = '${NONAME_HOST_EXTRA_CHAR}';/" ./resources/app/mode/identity.js
+fi
+
 ./Noname

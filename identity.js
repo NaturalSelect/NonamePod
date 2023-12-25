@@ -1,6 +1,7 @@
 'use strict';
 const MaxCharNum = 0;
 const AllowFreeChoose = false;
+const HostExtraChar = '';
 
 game.import('mode',function(lib,game,ui,get,ai,_status){
 	return {
@@ -2435,7 +2436,13 @@ game.import('mode',function(lib,game,ui,get,ai,_status){
 									continue;
 								}
 							}
-							list.push([game.players[i],[str,[event.list.randomRemove(num+num3),'characterx']],selectButton,true]);
+							var charList = event.list.randomRemove(num+num3);
+							if (HostExtraChar != "") {
+								if (game.me == game.players[i]) {
+									charList = charList.concat([HostExtraChar]);
+								}
+							}
+							list.push([game.players[i],[str,[charList,'characterx']],selectButton,true]);
 						}
 					}
 					game.me.chooseButtonOL(list,function(player,result){
