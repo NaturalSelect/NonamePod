@@ -1,7 +1,16 @@
+# NonamePod Makefile
+#
 BASH="bash"
 
+default: image
+phony := image
+
 image:
-	${BASH} ./build_image.sh
+	@./build_image.sh
+
+phony += run
 
 run:
-	${BASH} ./run.sh
+	@./run.sh
+
+.PHONY: $(phony)
