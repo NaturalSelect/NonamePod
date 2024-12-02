@@ -26,6 +26,7 @@ docker run \
     -v /dev/shm:/dev/shm \
     --device /dev/dri\
     -v /run/user/$(id -u)/pulse:/run/user/$(id -u)/pulse \
+    -v /etc/localtime:/etc/localtime:ro \
     -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
     -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
     "naturalselect/nonameshapod:v1.10.4"
